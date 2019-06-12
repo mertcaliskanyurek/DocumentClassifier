@@ -1,6 +1,7 @@
 package main.gui;
 
-import main.HomeworkBot;
+import main.TestBot;
+import zemberek.core.logging.Log;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -9,18 +10,19 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
-import java.io.File;
+import java.io.*;
 
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.Properties;
 
 public class MainFrame extends JFrame implements WindowInterface{
-	private static final ResourceBundle RESOURCES = ResourceBundle.getBundle("main.res.MainFrame");
+	/*
+	private static final ResourceBundle RESOURCES = ResourceBundle.getBundle("main.res.MainFrame").;
 	private static final ResourceBundle ERRORS = ResourceBundle.getBundle("main.res.Error");
+*/
+	private Properties mResourceProps;
+	private Properties mErrorProps;
 
 	private JPanel contentPane;
 	/**
@@ -40,7 +42,6 @@ public class MainFrame extends JFrame implements WindowInterface{
 
 	private JLabel labelCiktiYolu;
 	private JLabel lblStaffWordsDosyaYolu;
-	private JScrollPane logScroll;
 
 	private JRadioButton rdbtnTrain;
 	private JButton btnTrain;
@@ -53,7 +54,17 @@ public class MainFrame extends JFrame implements WindowInterface{
 	{
 		mListener = listener;
 
-		setTitle(RESOURCES.getString("windowTitle"));
+		mResourceProps = LanguageUtils.getProperties(this.getClass(),LanguageUtils.PROPS_MAIN_FRAME);
+		mErrorProps = LanguageUtils.getProperties(this.getClass(),LanguageUtils.PROPS_MAIN_ERROR);
+
+		if(mResourceProps==null || mErrorProps==null)
+		{
+			System.out.println("Error while reading properties.");
+			Log.error("Error while reading properties.");
+			return;
+		}
+
+		setTitle(mResourceProps.getProperty("windowTitle"));
 		this.setSize(820,600);
 		//this.setSize(1280,768);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -63,43 +74,43 @@ public class MainFrame extends JFrame implements WindowInterface{
 		setContentPane(contentPane);
 
 		JPanel panel_output = new JPanel();
-		panel_output.setBorder(new TitledBorder(null, RESOURCES.getString("output"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_output.setBorder(new TitledBorder(null, mResourceProps.getProperty("output"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
 		panel_kategori_sil = new JPanel();
-		panel_kategori_sil.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), RESOURCES.getString("deleteCategory"), TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_kategori_sil.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), mResourceProps.getProperty("deleteCategory"), TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		
 		panel_stop_words = new JPanel();
-		panel_stop_words.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), RESOURCES.getString("stopWordsFile"), TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_stop_words.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), mResourceProps.getProperty("stopWordsFile"), TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		
 		panel_cikti_yolu = new JPanel();
-		panel_cikti_yolu.setBorder(new TitledBorder(null, RESOURCES.getString("outputPath"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_cikti_yolu.setBorder(new TitledBorder(null, mResourceProps.getProperty("outputPath"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		btnTrain = new JButton(RESOURCES.getString("train"));
+		btnTrain = new JButton(mResourceProps.getProperty("train"));
 		btnTrain.addActionListener(new TrainPressListener());
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, RESOURCES.getString("log"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(null, mResourceProps.getProperty("log"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
 		panel_kategori_ekle = new JPanel();
-		panel_kategori_ekle.setBorder(new TitledBorder(null, RESOURCES.getString("addCategory"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_kategori_ekle.setBorder(new TitledBorder(null, mResourceProps.getProperty("addCategory"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
-		JLabel lblKategoriIsmi = new JLabel(RESOURCES.getString("categoryName"));
+		JLabel lblKategoriIsmi = new JLabel(mResourceProps.getProperty("categoryName"));
 		
 		textFieldAddCategoryName = new JTextField();
 		textFieldAddCategoryName.setColumns(10);
 		
-		JLabel lblDkmanEkle = new JLabel(RESOURCES.getString("addDocument"));
+		JLabel lblDkmanEkle = new JLabel(mResourceProps.getProperty("addDocument"));
 		
-		JButton btnBrowseDocument = new JButton(RESOURCES.getString("browse"));
+		JButton btnBrowseDocument = new JButton(mResourceProps.getProperty("browse"));
 		btnBrowseDocument.addActionListener(new BrowseDocumentListener());
 		
-		JButton btnAddCategory = new JButton(RESOURCES.getString("addCategory"));
+		JButton btnAddCategory = new JButton(mResourceProps.getProperty("addCategory"));
 		btnAddCategory.addActionListener(new AddCategoryListener());
 
 		ButtonGroup trainTestRadioButtons = new ButtonGroup();
-		rdbtnTrain = new JRadioButton(RESOURCES.getString("train"));
+		rdbtnTrain = new JRadioButton(mResourceProps.getProperty("train"));
 		rdbtnTrain.setSelected(true);
-		JRadioButton rdbtnTest = new JRadioButton(RESOURCES.getString("test"));
+		JRadioButton rdbtnTest = new JRadioButton(mResourceProps.getProperty("test"));
 
 		trainTestRadioButtons.add(rdbtnTest);
 		trainTestRadioButtons.add(rdbtnTrain);
@@ -144,7 +155,7 @@ public class MainFrame extends JFrame implements WindowInterface{
 		);
 		panel_kategori_ekle.setLayout(gl_panel_kategori_ekle);
 		
-		btnTest = new JButton(RESOURCES.getString("test"));
+		btnTest = new JButton(mResourceProps.getProperty("test"));
 		btnTest.addActionListener(new TestPressListener());
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -209,7 +220,7 @@ public class MainFrame extends JFrame implements WindowInterface{
 		
 		textAreaLog = new JTextArea();
 		textAreaLog.setEditable(false);
-		logScroll = new JScrollPane(textAreaLog);
+		JScrollPane logScroll = new JScrollPane(textAreaLog);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
@@ -223,11 +234,11 @@ public class MainFrame extends JFrame implements WindowInterface{
 		);
 		panel.setLayout(gl_panel);
 
-		labelCiktiYolu = new JLabel(RESOURCES.getString("filePath"));
+		labelCiktiYolu = new JLabel(mResourceProps.getProperty("filePath"));
 		//for homework. delete after sended
-		labelCiktiYolu.setText(HomeworkBot.defaultOutputFilePath);
+		labelCiktiYolu.setText(TestBot.defaultOutputFilePath);
 		
-		JButton btnBrowseOutputDir = new JButton(RESOURCES.getString("browse"));
+		JButton btnBrowseOutputDir = new JButton(mResourceProps.getProperty("browse"));
 		btnBrowseOutputDir.addActionListener(new BrowseOutputFileListener());
 		
 		GroupLayout gl_panel_cikti_yolu = new GroupLayout(panel_cikti_yolu);
@@ -251,10 +262,10 @@ public class MainFrame extends JFrame implements WindowInterface{
 		);
 		panel_cikti_yolu.setLayout(gl_panel_cikti_yolu);
 		
-		lblStaffWordsDosyaYolu = new JLabel(RESOURCES.getString("filePath"));
-		lblStaffWordsDosyaYolu.setText(HomeworkBot.defaultStopWordsFilePath);
+		lblStaffWordsDosyaYolu = new JLabel(mResourceProps.getProperty("filePath"));
+		lblStaffWordsDosyaYolu.setText(TestBot.defaultStopWordsFilePath);
 		
-		JButton btnBrowseStopWordsFile = new JButton(RESOURCES.getString("browse"));
+		JButton btnBrowseStopWordsFile = new JButton(mResourceProps.getProperty("browse"));
 		btnBrowseStopWordsFile.addActionListener(new BrowseStopWordsListener());
 		
 		GroupLayout gl_panel_stop_words = new GroupLayout(panel_stop_words);
@@ -278,12 +289,12 @@ public class MainFrame extends JFrame implements WindowInterface{
 		);
 		panel_stop_words.setLayout(gl_panel_stop_words);
 		
-		JLabel lblKategoriIsmi_1 = new JLabel(RESOURCES.getString("categoryName"));
+		JLabel lblKategoriIsmi_1 = new JLabel(mResourceProps.getProperty("categoryName"));
 		
 		textFieldDeleteCategoryName = new JTextField();
 		textFieldDeleteCategoryName.setColumns(10);
 		
-		JButton btnDeleteCategory = new JButton(RESOURCES.getString("delete"));
+		JButton btnDeleteCategory = new JButton(mResourceProps.getProperty("delete"));
 		btnDeleteCategory.addActionListener(new DeleteCategoryListener());
 		
 		GroupLayout gl_panel_kategori_sil = new GroupLayout(panel_kategori_sil);
@@ -330,6 +341,7 @@ public class MainFrame extends JFrame implements WindowInterface{
 	public void addOutput(String output)
 	{
 		textAreaOutput.append(output+'\n');
+		textAreaOutput.setCaretPosition(textAreaOutput.getText().length());
 	}
 
 	@Override
@@ -357,13 +369,13 @@ public class MainFrame extends JFrame implements WindowInterface{
 			String categoryName = textFieldAddCategoryName.getText();
 			if(categoryName.equals(""))
 			{
-				showMessage(ERRORS.getString("emptyCategoryName"));
+				showMessage(mErrorProps.getProperty("emptyCategoryName"));
 				return;
 			}
 			
 			if(mDocumentFiles == null)
 			{
-				showMessage(ERRORS.getString("emptyDocuments"));
+				showMessage(mErrorProps.getProperty("emptyDocuments"));
 				return;
 			}
 			
@@ -404,7 +416,7 @@ public class MainFrame extends JFrame implements WindowInterface{
 			String name = textFieldDeleteCategoryName.getText();
 			if(name.equals(""))
 			{
-				showMessage(ERRORS.getString("emptyName"));
+				showMessage(mErrorProps.getProperty("emptyName"));
 				return;
 			}
 			

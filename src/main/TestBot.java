@@ -4,7 +4,7 @@ import main.controller.MainController;
 
 import java.io.File;
 
-public class HomeworkBot {
+public class TestBot {
 
     private static final  String trainDirEkonomi = "src/main/res/docs/odev-veriler/train/ekonomi/";
     private static final  String trainDirMagazin = "src/main/res/docs/odev-veriler/train/magazin/";
@@ -20,18 +20,6 @@ public class HomeworkBot {
 
     private static final String[] testDirs = {testDirEkonomi,testDirMagazin,testDirSaglik,testDirSpor};
 
-/*
-    private static final  String trainDirA = "src/main/res/docs/deneme/train/A/";
-    private static final  String trainDirB = "src/main/res/docs/deneme/train/B/";
-    private static final  String trainDirC = "src/main/res/docs/deneme/train/C/";
-    private static final  String trainDirD = "src/main/res/docs/deneme/train/D/";
-
-    private static final String[] trainDirs = {trainDirA,trainDirB,trainDirC,trainDirD};
-
-    private static final  String testDir = "src/main/res/docs/deneme/test/D/";
-
-    private static final String[] testDirs = {testDir};
-*/
     public static final String defaultStopWordsFilePath = "src/main/res/docs/stop-words-turkish-github.txt";
     public static final String defaultOutputFilePath = "src/main/res/docs/";
 

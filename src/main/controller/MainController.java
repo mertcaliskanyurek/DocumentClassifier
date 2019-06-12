@@ -3,19 +3,25 @@ package main.controller;
 import main.classifier.Classifier;
 import main.classifier.ClassifierListener;
 import main.classifier.KNNClassifier;
+import main.gui.LanguageUtils;
 import main.gui.MainFrame;
 import main.gui.MainFrameListener;
 import main.model.*;
 import main.text_file_helper.FileHelper;
+import zemberek.core.logging.Log;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
 public class MainController implements MainFrameListener, ClassifierListener {
-
+/*
     private static final ResourceBundle RESOURCES = ResourceBundle.getBundle("main.res.Output");
     private static final ResourceBundle ERRORS = ResourceBundle.getBundle("main.res.Error");
+*/
+    private Properties mResourceProps;
+    private Properties mErrorProps;
+
 
     private Classifier mClassifier;
     private MainFrame mWindow;
@@ -23,6 +29,17 @@ public class MainController implements MainFrameListener, ClassifierListener {
     private String mOutputDir = null;
     public MainController()
     {
+
+        mResourceProps = LanguageUtils.getProperties(this.getClass(),LanguageUtils.PROPS_MAIN_OUTPUT);
+        mErrorProps = LanguageUtils.getProperties(this.getClass(),LanguageUtils.PROPS_MAIN_ERROR);
+
+        if(mResourceProps==null || mErrorProps==null)
+        {
+            System.out.println("Error while reading properties.");
+            Log.error("Error while reading properties.");
+            return;
+        }
+
         mWindow = new MainFrame(this);
         mWindow.setVisible(true);
 
@@ -58,33 +75,33 @@ public class MainController implements MainFrameListener, ClassifierListener {
                 if(!documentTexts.containsKey(documentName))
                     documentTexts.put(documentName,documentText);
                 else
-                    mWindow.addLog(documentName+ERRORS.getString("documentAlreadyLoaded"));
+                    mWindow.addLog(documentName+mErrorProps.getProperty("documentAlreadyLoaded"));
 
             } catch (IOException e) {
                 e.printStackTrace();
-                mWindow.addLog(f.getName()+ERRORS.getString("documentCantRead"));
+                mWindow.addLog(f.getName()+mErrorProps.getProperty("documentCantRead"));
             }
         }
 
         mClassifier.addCategory(name,documentTexts,train);
-        String trainText = train?RESOURCES.getString("train"):RESOURCES.getString("test");
-        mWindow.addOutput(trainText+" "+RESOURCES.getString("categoryAdded")+name+"  "
-                +RESOURCES.getString("documentSize")+documentTexts.size());
+        String trainText = train?mResourceProps.getProperty("train"):mResourceProps.getProperty("test");
+        mWindow.addOutput(trainText+" "+mResourceProps.getProperty("categoryAdded")+name+"  "
+                +mResourceProps.getProperty("documentSize")+documentTexts.size());
     }
 
     private void showTrainResult(FreqTable table) {
-        mWindow.addOutput(RESOURCES.getString("result"));
-        mWindow.addOutput(RESOURCES.getString("features")+table.getAllFeatures().size());
-        mWindow.addOutput(RESOURCES.getString("docSize")+table.getAllDocuments().size());
+        mWindow.addOutput(mResourceProps.getProperty("result"));
+        mWindow.addOutput(mResourceProps.getProperty("features")+table.getAllFeatures().size());
+        mWindow.addOutput(mResourceProps.getProperty("docSize")+table.getAllDocuments().size());
 
-        mWindow.addOutput(RESOURCES.getString("youCanTestNow"));
+        mWindow.addOutput(mResourceProps.getProperty("youCanTestNow"));
     }
 
     private void writeTableToFile(FreqTable table)
     {
         if(mOutputDir == null)
         {
-            mWindow.addLog(ERRORS.getString("outputFileMissing"));
+            mWindow.addLog(mErrorProps.getProperty("outputFileMissing"));
             return;
         }
 
@@ -95,7 +112,7 @@ public class MainController implements MainFrameListener, ClassifierListener {
             FileHelper.writeToTextFile(outputFile,csvStringLines);
         } catch (IOException e) {
             e.printStackTrace();
-            mWindow.addLog(ERRORS.getString("erroWhileWritingOutput"));
+            mWindow.addLog(mErrorProps.getProperty("erroWhileWritingOutput"));
         }
     }
 
@@ -138,7 +155,7 @@ public class MainController implements MainFrameListener, ClassifierListener {
         for(String category:categoryPerformanceTable.keySet())
         {
             Performance performance = categoryPerformanceTable.get(category);
-            sb.append(RESOURCES.getString("category")+category);
+            sb.append(mResourceProps.getProperty("category")+category);
             sb.append(" | Precision : "+performance.calculatePrecision());
             sb.append(" | Recall : "+performance.calculateRecall());
             sb.append(" | F-Score : "+performance.calculateFScore());
@@ -166,13 +183,13 @@ public class MainController implements MainFrameListener, ClassifierListener {
         if(deleted>0)
             mWindow.addLog(name+" Category delete success : "+deleted+" categories affected");
         else
-            mWindow.addLog(ERRORS.getString("errorWhilecategoryDelete")+name);
+            mWindow.addLog(mErrorProps.getProperty("errorWhilecategoryDelete")+name);
     }
 
     @Override
     public void stopWordsBrowsePressed(File stopWordsFile) {
         if(!setStopWordsFile(stopWordsFile))
-            mWindow.addLog(ERRORS.getString("cantReadStopWordsFile"));
+            mWindow.addLog(mErrorProps.getProperty("cantReadStopWordsFile"));
         else
             mWindow.addLog("Stop words file loaded");
     }
@@ -186,19 +203,19 @@ public class MainController implements MainFrameListener, ClassifierListener {
     public void onTrainPressed() {
         mWindow.setEnabledAllComponents(false);
         mClassifier.startTrain();
-        mWindow.addOutput(RESOURCES.getString("trainStarted"));
+        mWindow.addOutput(mResourceProps.getProperty("trainStarted"));
     }
 
     @Override
     public void onTestPressed() {
         mWindow.setEnabledAllComponents(false);
         mClassifier.startTest();
-        mWindow.addOutput(RESOURCES.getString("testStarted"));
+        mWindow.addOutput(mResourceProps.getProperty("testStarted"));
     }
 
     @Override
     public void onTrainFinished(FreqTable table) {
-        mWindow.addOutput(RESOURCES.getString("trainFinished"));
+        mWindow.addOutput(mResourceProps.getProperty("trainFinished"));
         mWindow.setEnabledAllComponents(true);
         showTrainResult(table);
         writeTableToFile(table);
@@ -208,7 +225,7 @@ public class MainController implements MainFrameListener, ClassifierListener {
     @Override
     public void onTestFinished(Map<String, Performance> categoryPerformanceTable) {
         mWindow.setEnabledAllComponents(true);
-        mWindow.addOutput(RESOURCES.getString("testFinished"));
+        mWindow.addOutput(mResourceProps.getProperty("testFinished"));
         showTestResults(categoryPerformanceTable);
     }
 

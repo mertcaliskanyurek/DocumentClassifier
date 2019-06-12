@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16839875-d363-42af-811f-1a64ea695cbd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DocumentClassification.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/model/Performance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/DocumentClassifier.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/zemberek_full.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/gui/LanguageUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DocumentClassifier.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/HomeworkBot.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/classifier/Classifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/classifier/Classifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/classifier/KNNClassifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/classifier/KNNClassifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/gui/MainFrame$AddCategoryListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/MainFrame$AddCategoryListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/gui/MainFrame$BrowseDocumentListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/MainFrame$BrowseDocumentListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/gui/MainFrame$BrowseOutputFileListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/MainFrame$BrowseOutputFileListener.class" afterDir="false" />
@@ -24,35 +18,26 @@
       <change beforePath="$PROJECT_DIR$/bin/main/gui/MainFrame$TestPressListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/MainFrame$TestPressListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/gui/MainFrame$TrainPressListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/MainFrame$TrainPressListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/gui/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/gui/MainFrameListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/MainFrameListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/model/Class.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/model/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/model/Document.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/text_file_helper/FileHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/text_file_helper/FileHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/HomeworkBot$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/HomeworkBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/HomeworkBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/classifier/Classifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/classifier/Classifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/classifier/ClassifierListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/classifier/ClassifierListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/classifier/KNNClassifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/classifier/KNNClassifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/Document.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/Feature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/Feature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/FreqTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/FreqTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/PerformanceTable$Metric.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/model/PerformanceTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/res/Output.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/res/Output.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DocumentClassifier/main/res/docs/Train Table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DocumentClassifier/main/res/docs/Train Table.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/HomeworkBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/HomeworkBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/classifier/Classifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classifier/Classifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/classifier/ClassifierListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classifier/ClassifierListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/res/docs/Performance.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/res/docs/deneme/test/D/6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/res/docs/deneme/train/A/cumle1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/res/docs/deneme/train/A/cumle2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/res/docs/deneme/train/B/cumle3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/res/docs/deneme/train/C/cumle4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/res/docs/deneme/train/D/cumle5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/HomeworkBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TestBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/classifier/KNNClassifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classifier/KNNClassifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Feature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Feature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/FreqTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/FreqTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/PerformanceTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/Output.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/Output.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/docs/Train Table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/docs/Train Table.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/Performance.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/Train Table.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/deneme/test/D/6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/deneme/train/A/cumle1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/deneme/train/A/cumle2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/deneme/train/B/cumle3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/deneme/train/C/cumle4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/docs/deneme/train/D/cumle5.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -67,43 +52,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="216" column="81" selection-start-line="216" selection-start-column="81" selection-end-line="216" selection-end-column="81" />
+            <state relative-caret-position="437">
+              <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/classifier/ClassifierListener.java">
+        <entry file="file://$PROJECT_DIR$/src/main/gui/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+            <state relative-caret-position="714">
+              <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="64" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/classifier/Classifier.java">
+        <entry file="file://$PROJECT_DIR$/src/main/gui/LanguageUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="816">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/classifier/KNNClassifier.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/Object.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+            <state relative-caret-position="663">
+              <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/TestBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -116,6 +120,7 @@
       <find>assigned</find>
       <find>show</find>
       <find>system</find>
+      <find>scr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,20 +129,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/gui/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/classifier/Classifier.java" />
         <option value="$PROJECT_DIR$/src/main/res/Output.properties" />
         <option value="$PROJECT_DIR$/src/main/classifier/ClassifierListener.java" />
         <option value="$PROJECT_DIR$/src/main/classifier/KNNClassifier.java" />
+        <option value="$PROJECT_DIR$/src/main/TestBot.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/LanguageUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/controller/MainController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="310" />
-    <option name="y" value="-12" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="x" value="392" />
+    <option name="y" value="62" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -151,12 +158,23 @@
               <item name="DocumentClassification" type="b2602c69:ProjectViewProjectNode" />
               <item name="DocumentClassifier" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DocumentClassification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DocumentClassifier" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DocumentClassification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DocumentClassifier" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -165,10 +183,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -219,16 +237,16 @@
     <option name="totallyTimeSpent" value="13712000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <frame x="55" y="-8" width="1873" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23968254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3469388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.10599078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19626169" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6513057" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -238,7 +256,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32872504" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32872504" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3281412" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -259,20 +277,11 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/res/docs/Performance.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/docs/Performance.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/text_file_helper/FileHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-142">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="346" column="36" selection-start-line="346" selection-start-column="36" selection-end-line="346" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -283,13 +292,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/HomeworkBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/Output.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -297,31 +299,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/docs/Train Table.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="216" column="81" selection-start-line="216" selection-start-column="81" selection-end-line="216" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classifier/ClassifierListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classifier/Classifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="136">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/classifier/KNNClassifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+        <state relative-caret-position="425">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classifier/Classifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classifier/ClassifierListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/MainFrame.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="64" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/gui/LanguageUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TestBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -342,6 +386,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

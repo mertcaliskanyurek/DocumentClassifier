@@ -6,7 +6,7 @@ import java.util.*;
 
 public final class KNNClassifier extends Classifier {
 
-    private static final int K_VALUE = 2;
+    private static final int K_VALUE = 8;
 
     //String: feature name, Integer: the number of document in which the feature occurs
     private Map<String,Integer> mFeatureDocFreqTable = new Hashtable<>();
@@ -32,12 +32,12 @@ public final class KNNClassifier extends Classifier {
         new Thread(()->{
             mTestFreqTable = calculateTfIdfFreqTable(mTestDocuments,"Test Table");
 
-            //String: document name , String: assigned category
+            //Key: document name , Value: assigned category
             Map<String,String> assignedDocuments = new Hashtable<>();
 
             for(String testDoc:mTestFreqTable.getAllDocuments())
             {
-                //Similarity table for testDoc, String: train document name , Double:similarity value
+                //Similarity table for testDoc, Key: train document name , Value:similarity value
                 Map<String,Double> documentSimilarityTable = new Hashtable<>();
                 for(String trainDoc:mTrainFreqTable.getAllDocuments())
                 {

@@ -1,8 +1,0 @@
-Kategori : saglik | Precision : 0.6777777777777778 | Recall : 0.7625 | F-Score : 0.7176470588235294
-
-Kategori : spor | Precision : 0.7875 | Recall : 0.7875 | F-Score : 0.7875
-
-Kategori : magazin | Precision : 0.7368421052631579 | Recall : 0.7 | F-Score : 0.717948717948718
-
-Kategori : ekonomi | Precision : 0.6986301369863014 | Recall : 0.6455696202531646 | F-Score : 0.6710526315789473
-
